@@ -1,0 +1,74 @@
+\section{Aula 03 - Questão 2}
+
+2. Crie instâncias aleatórias com idades (inteiros) variando entre 0 e 100, com tamanhos \( n = 100 \), \( n = 1000 \), \( n = 1000000 \).
+
+\begin{verbatim}
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <random>
+#include <chrono>
+
+bool idadeRep(const std::vector<int>& Idade) {
+    int tam = Idade.size();
+    if (tam == 0) return false;
+
+    int menor = 200;  
+    for (int i = 0; i < tam; i++) {
+        if (Idade[i] < menor) {
+            menor = Idade[i];
+        }
+    }
+
+    int count = 0;
+    for (int i = 0; i < tam; i++) {
+        if (Idade[i] == menor) {
+            count++;
+        }
+    }
+
+    return count > 1; 
+}
+
+bool idadeRep2(std::vector<int> Idade) {
+    std::sort(Idade.begin(), Idade.end());
+    return Idade[0] == Idade[1];
+}
+
+std::vector<int> generateRandomAges(int n) {
+    std::vector<int> ages(n);
+    std::default_random_engine generator;
+    std::uniform_int_distribution<int> distribution(0, 100);
+
+    for (int i = 0; i < n; i++) {
+        ages[i] = distribution(generator);
+    }
+    return ages;
+}
+
+int main() {
+    int sizes[] = {100, 1000, 1000000};
+
+    for (int n : sizes) {
+        std::vector<int> randomAges = generateRandomAges(n);
+        
+        auto start = std::chrono::high_resolution_clock::now();
+        idadeRep(randomAges);
+        auto end = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double, std::micro> duration1 = end - start;
+
+        start = std::chrono::high_resolution_clock::now();
+        idadeRep2(randomAges);
+        end = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double, std::micro> duration2 = end - start;
+
+        std::cout << "n = " << n << ": "
+                  << "idadeRep: " << duration1.count() << " microsegundos, "
+                  << "idadeRep2: " << duration2.count() << " microsegundos" 
+                  << std::endl;
+    }
+
+    return 0;
+}
+
+\end{verbatim}
