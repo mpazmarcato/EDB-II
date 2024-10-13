@@ -1,3 +1,9 @@
-\section{Test}
+\section{Aula 02 - Questão 1}
 
-test
+1. A complexidade muda se a lista estiver ordenada e utilizarmos o algoritmo2?
+
+A complexidade de uma busca depende diretamente do método utilizado e de como os dados estão organizados. Quando realizamos uma busca sequencial, o algoritmo percorre a lista item por item, verificando cada elemento até encontrar o desejado ou alcançar o final da lista. Nesse caso, a lista pode estar ordenada ou não, mas isso não afeta a eficiência da busca, já que o processo continua sendo linear. A complexidade dessa busca é O(n), onde n é o número de elementos na lista. No pior cenário, será necessário verificar todos os elementos, o que torna a busca sequencial pouco eficiente para listas grandes.
+
+Por outro lado, se a lista estiver ordenada, podemos adotar a busca binária, que é muito mais eficiente. A busca binária aproveita a ordenação dos elementos para dividir a lista ao meio repetidamente. A cada iteração, a metade dos elementos é descartada, pois o algoritmo sabe em qual das metades o elemento procurado pode estar, devido à ordenação. Esse processo de divisão continua até que o elemento seja encontrado ou seja determinado que ele não está presente na lista. A complexidade da busca binária é O(log n), onde n é o número de elementos. Essa redução exponencial no número de verificações faz com que a busca binária seja muito mais eficiente do que a busca sequencial, especialmente em listas grandes.
+
+Portanto, a complexidade da busca muda significativamente quando a lista está ordenada e utilizamos a busca binária, passando de O(n) (busca sequencial) para O(log n), o que representa uma grande melhoria no tempo de execução.
