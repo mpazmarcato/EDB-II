@@ -1,0 +1,31 @@
+\subsection{Iterativa}
+\begin{verbatim}
+# Realiza a ordenação de um vetor desordenado com a estratégia do Bubble Sort.
+bubblesort(vetor) { 
+  faça {
+    # Variável de controle.
+    # Fará com que o vetor seja varrido diversas vezes
+    # até que não reste mais nenhum conflito.
+    conflito = falso
+
+    para (x = 0; x < vetor.tamanho(); x++) { 
+      # Compara o valor atual com o do próximo elemento.
+      # Se o atual for maior, faz a troca com o próximo.
+      # Também sinaliza que um conflito ocorreu para que
+      # a iteração "faça... enquanto" ocorra novamente.
+      se (vetor[x] > vetor[x + 1]) {
+        troca(vetor, x, x + 1)
+        conflito = verdadeiro
+      }
+    }
+  }
+  enquanto (conflito)
+}
+
+# Faz a troca entre dois elementos de um vetor.
+troca(vetor, indice1, indice2) { 
+  elementoAuxiliar = vetor[indice2]
+  vetor[indice2] = vetor[indice1]
+  vetor[indice1] = elementoAuxiliar
+}
+\end{verbatim}
