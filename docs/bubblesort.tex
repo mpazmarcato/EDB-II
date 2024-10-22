@@ -1,3 +1,12 @@
 \section{BubbleSort}
 Aqui estão os pseudocódigos do algoritmo de \textbf{BubbleSort}, em sua versão iterativa e recursiva.
 \input{bubblesort_sections/iteration.tex} 
+
+\subsection{Análise dos Algoritmos}
+O algoritmo iterativo tem diferentes funções de complexidade para cada caso:
+\begin{itemize}
+  \item Melhor caso: no melhor caso (o vetor já está ordenado), o loop \textit{for} será executado $n$ vezes e o \textit{do-while}, somente 1. Portanto, temos uma complexidade expressa por algo como $f(n) = n + 3$, onde $n$ representa o loop \textit{for} e o 3, as instruções que não dependem da entrada: o $do-while$, a atribuição da variável \textit{conflito} e a verificação dentro do loop.
+  \item Pior caso: no pior caso, o loop externo ocorre $n$ vezes e também o interno. Desse modo, temos uma complexidade expressa por algo como $g(n) = n^2 + 5$, onde 5 representa o total de instruções que não dependem da entrada e $n^2$ a quantidade de iterações total feito pelos loops.
+\end{itemize}
+
+Logo, temos que o algoritmo iterativo é $O(n^2)$ e $\Omega(n)$, não existindo $\Theta$.
