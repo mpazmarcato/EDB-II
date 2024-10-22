@@ -1,26 +1,23 @@
 \subsection{Recursiva}
 \begin{verbatim}
 
-# Realiza a ordenação de um vetor com o algoritmo Quick Sort, 
-# recebendo como entrada o vetor e os índices das extremidades.
+# Realiza a ordenação de um vetor desordenado com o algoritmo Quick Sort.
 quicksort(vetor, valorEsquerda, valorDireita) { 
   if (valorEsquerda < valorDireita) {
-    # Pivo recebe o ponto onde o vetor será particionado.
+    # Pivô é o ponto onde o vetor será dividido em duas partes.
     pivo = particiona(vetor, valorEsquerda, valorDireita)
-    # Realiza a ordenação no subvetor à esquerda do ponto determinado.
+    # Realiza a ordenação no subvetor à esquerda do pivô.
     quicksort(vetor, valorEsquerda, pivo)
-    # Realiza a ordenação no subvetor à direita do ponto determinado.
-    quicksort(vetor, pivo + 1, valorDireita)
+    # Realiza a ordenação no subvetor à direita do pivô.
+    quicksort(vetor, pivo + 1, valorDireita) 
   }
 }
 
 # Função para particionar um vetor em dois baseado em um pivô.
 particiona(vetor, valorBaixo, valorAlto) { 
   # Obter o valor central relativo ao vetor.
-  meio = valorBaixo + (valorAlto - valorBaixo) / 2 
-
-  # O pivô é o elemento central do vetor analisado.
-  pivo = vetor[meio] 
+  meio = valorBaixo + (valorAlto - valorBaixo) / 2
+  pivo = vetor[meio] # Obtém o pivô.
 
   # Variáveis internas que controlam os índices em uso.
   inicio = valorBaixo
