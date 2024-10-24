@@ -1,0 +1,42 @@
+\subsection{Metodo 03 - Árvore de recursão}
+Relação de Recorrência da quicksort recursiva para o melhor caso, $T(n) = 2T(n/2) + n$. Utilizando o método árvore de recorrência.
+
+\begin{table}[ht!]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    \textbf{Nível} & \textbf{Tamanho} & $\#$\textbf{Nós} & \textbf{Tempo} \\ \hline
+     0 & n & 1 & n \\ \hline
+     1 & $n/2$ & 2 & $n/2$ \\ \hline
+     2 & $n/4$ & 4 & $n/4$ \\ \hline
+     3 & $n/8$ & 8 & $n/8$ \\ \hline
+     (...) & & & \\ \hline
+     i & $n/2^i$ & $2^i$ & $n/2^i$ \\ \hline 
+    \end{tabular}  
+    \caption{Árvore de recursão}
+\end{table}
+
+Calculando o somátorio do tempo x nós. \\
+$n/2^i = 1 \rightarrow n = 2^i \rightarrow i = \log_2{n}$ \\
+$\sum_{i=0}^{\log_2{n}} (2^i \times n/2^i) = \sum_{i=0}^{\log_2{n}} n = n \log_2{n}$. Logo, ele é $\Theta n \log{n}$ 
+
+Relação de Recorrência da quicksort recursiva para o pior caso, $T(n) = T(n - 1) + n$. Utilizando o método árvore de recorrência.
+
+\begin{table}[ht!]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    \textbf{Nível} & \textbf{Tamanho} & $\#$\textbf{Nós} & \textbf{Tempo} \\ \hline
+     0 & n & 1 & n \\ \hline
+     1 & $n - 1$ & 1 & $n/2$ \\ \hline
+     2 & $n - 2$ & 1 & $n/4$ \\ \hline
+     3 & $n - 3$ & 1 & $n/8$ \\ \hline
+     (...) & & & \\ \hline
+     i & $n - i$ & $1$ & $n/2^i$ \\ \hline 
+    \end{tabular}  
+    \caption{Árvore de recursão}
+\end{table}
+
+Calculando o somátorio do tempo x nós. \\
+$1 = n -i \rightarrow i = n - 1$ \\
+$\sum_{i = 0}^{n - 1} (n/2^i) = 2n(1 - 1/2^n)$. Logo, ele é $\Theta n$, pois o $2^n$ está tendendo a 0, tornando o n a complexidade predominante.
