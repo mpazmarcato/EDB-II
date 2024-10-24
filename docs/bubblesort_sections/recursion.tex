@@ -1,0 +1,29 @@
+\subsection{Recursion}
+\begin{verbatim}
+# Realiza a ordenação de um vetor desordenado com a estratégia do Bubble Sort recursivamente.
+bubblesort_recursivo(lista, n){
+    #lista: a lista a ser ordenada
+    #n = o tamanho da lista
+
+    # Caso base: se a lista tiver 1 ou 0 elementos, já está ordenada
+    se n <= 1{
+        retornar lista;
+    }
+    # Percorrer a lista comparando elementos adjacentes
+    para (i de 0 até n-2){
+        se(lista[i] > lista[i+1]){
+            # Trocar elementos se estiverem na ordem errada
+            trocar(lista[i], lista[i+1])
+            }
+    }
+     # Chamar recursivamente a função para ordenar os n-1 primeiros elementos
+    bubble_sort_recursivo(lista, n-1)
+}    
+
+# Faz a troca entre dois elementos de um vetor.
+troca(vetor, indice1, indice2) { 
+  elementoAuxiliar = vetor[indice2]
+  vetor[indice2] = vetor[indice1]
+  vetor[indice1] = elementoAuxiliar
+}
+\end{verbatim}
