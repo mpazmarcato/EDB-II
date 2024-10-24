@@ -1,2 +1,21 @@
 \subsection{Método 3 - Método Árvore de Recursão}
 Relação de Recorrência da mergesort recursiva, $T(n) = 2T(n/2) + n$. Utilizando o método árvore de recorrência, temos.
+
+\begin{table}[ht!]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    \textbf{Nível} & \textbf{Tamanho} & $\#$\textbf{Nós} & \textbf{Tempo} \\ \hline
+     0 & n & 1 & n \\ \hline
+     1 & $n/2$ & 1 & $n/2$ \\ \hline
+     2 & $n/4$ & 1 & $n/4$ \\ \hline
+     3 & $n/8$ & 1 & $n/8$ \\ \hline
+     (...) & & & \\ \hline
+     i & $n/2^i$ & 1 & $n/2^i$ \\ \hline 
+    \end{tabular}  
+    \caption{Árvore de recursão}
+\end{table}
+
+Calculando o somátorio do tempo x nós. \\
+$n/2^i = 1$ \rightarrow $n = 2^i$ \rightarrow $i = \log_2{n}$
+$\sum_{i=0}^{\log_2{n}} (1 \times n/2^i) = (2 - 2^{-n})n$
