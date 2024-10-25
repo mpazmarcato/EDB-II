@@ -40,13 +40,10 @@ void quickSortIterative(vector<int> &array, int left, int right)
 {
     stack<pair<int, int>> s;
 
-    // Empilha o subarray inicial (toda a array)
     s.push({left, right});
 
-    // Processa os subarrays até que a pilha esteja vazia
     while (!s.empty())
     {
-        // Desempilha os limites do subarray atual
         int low = s.top().first;
         int high = s.top().second;
         s.pop();
@@ -54,13 +51,13 @@ void quickSortIterative(vector<int> &array, int left, int right)
         // Particiona o subarray e obtém o índice do pivô
         int pivot = partition(array, low, high);
 
-        // Se houver elementos à esquerda do pivô, empilha o subarray da esquerda
+        //subarray da esquerda
         if (low < pivot - 1)
         {
             s.push({low, pivot - 1});
         }
 
-        // Se houver elementos à direita do pivô, empilha o subarray da direita
+        //subarray da direita
         if (pivot < high)
         {
             s.push({pivot, high});
