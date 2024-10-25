@@ -1,1 +1,75 @@
 \subsection{Iterativa}
+\begin{verbatim}
+
+# Realiza a ordenação de um vetor desordenado com o algoritmo Quick Sort de forma iterativa.
+quickSortIterative(vetor, valorEsquerda, valorDireita) {
+    # Inicializa uma pilha para gerenciar os subvetores
+    pilha = nova Pilha()
+    
+    # Empilha os limites iniciais do vetor
+    pilha.empilhar((valorEsquerda, valorDireita))
+    
+    # Processa os subvetores até que a pilha esteja vazia
+    enquanto (pilha não está vazia) {
+        # Desempilha os limites atuais do subvetor
+        (valorBaixo, valorAlto) = pilha.desempilhar()
+        
+        # Particiona o subvetor atual e obtém a posição do pivô
+        pivo = particiona(vetor, valorBaixo, valorAlto)
+        
+        # Se houver elementos à esquerda do pivô, empilha o subvetor esquerdo
+        se (valorBaixo < pivo - 1) {
+            pilha.empilhar((valorBaixo, pivo - 1))
+        }
+        
+        # Se houver elementos à direita do pivô, empilha o subvetor direito
+        se (pivo < valorAlto) {
+            pilha.empilhar((pivo, valorAlto))
+        }
+    }
+}
+
+# Função para particionar um vetor em dois baseado em um pivô.
+particiona(vetor, valorBaixo, valorAlto) { 
+  # Obter o valor central relativo ao vetor.
+  meio = valorBaixo + (valorAlto - valorBaixo) / 2
+  pivo = vetor[meio] # Obtém o pivô.
+
+  # Variáveis internas que controlam os índices em uso.
+  inicio = valorBaixo
+  final = valorAlto 
+  
+  # Percorre de uma extremidade à outra.
+  enquanto(inicio <= final) { 
+    # Ajusta o índice da extremidade esquerda até encontrar um elemento 
+    # à esquerda maior que o pivô.
+    enquanto (vetor[inicio] < pivo) { 
+      inicio++
+    }
+    # Ajusta o índice da extremidade direita até encontrar um elemento 
+    # à direita menor que o pivô.
+    enquanto (vetor[final] > pivo) {
+      final--
+    }
+
+    # Se os índices das extremidades não se encontraram, 
+    # os valores maiores e menores que o pivô não estão
+    # separados, fazendo necessária uma troca arbitrária.
+    se (inicio <= final) {
+      trocar(vetor, inicio, final)
+      inicio++
+      final--
+    }
+  }
+  
+  # Retorna a posição do novo pivô
+  retorne inicio
+}
+   
+# Função para trocar dois elementos em um vetor.
+trocar(vetor, indice1, indice2) { 
+  elementoAuxiliar = vetor[indice2]
+  vetor[indice2] = vetor[indice1]
+  vetor[indice1] = elementoAuxiliar
+}
+    \end{verbatim}
