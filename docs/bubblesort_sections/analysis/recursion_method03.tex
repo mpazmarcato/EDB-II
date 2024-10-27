@@ -1,0 +1,40 @@
+\subsubsection{Método 03 - Método Árvore de Recursão}
+
+Relação de Recorrência do \textbf{Bubble Sort Recursivo} para o melhor caso, \( T(n) = T(n - 1) + n \). Utilizando o método árvore de recorrência.
+
+\begin{table}[ht!]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    \textbf{Nível} & \textbf{Tamanho} & $\#$\textbf{Nós} & \textbf{Tempo} \\ \hline
+     0 & n & 1 & n \\ \hline
+     1 & $n - 1$ & 1 & $n - 1$ \\ \hline
+     2 & $n - 2$ & 1 & $n - 2$ \\ \hline
+     3 & $n - 3$ & 1 & $n - 3$ \\ \hline
+     (...) & & & \\ \hline
+     i & $n - i$ & 1 & $n - i$ \\ \hline 
+    \end{tabular}  
+    \caption{Árvore de recursão do Bubble Sort Recursivo}
+\end{table}
+
+\textbf{Calculando o somatório do tempo em cada nível}
+
+O trabalho realizado em cada nível \(i\) é proporcional ao tamanho \( n - i \), com apenas um nó em cada nível. O somatório total do tempo em cada nível é:
+
+\[
+\sum_{i=0}^{n-1} (n - i) = n + (n-1) + (n-2) + \dots + 1
+\]
+
+Esta soma pode ser simplificada como a soma de uma progressão aritmética:
+
+\[
+T(n) = \frac{n(n+1)}{2}
+\]
+
+Logo, a complexidade final é:
+
+\[
+T(n) = O(n^2)
+\]
+
+Portanto, a complexidade do Bubble Sort recursivo no melhor caso (e também no pior caso) é \( O(n^2) \), dado que a quantidade de trabalho em cada nível é linear, e há \( n \) níveis de recursão.
