@@ -1,23 +1,5 @@
-\subsection{Análise dos Algoritmos}
-O algoritmo iterativo tem diferentes funções de complexidade para cada caso:
-\begin{itemize}
-  \item Melhor caso: ocorre quando a lista está ordenada; o loop interno será executado $n$ vezes e o externo, somente 1. Portanto, temos uma complexidade expressa por algo como $f(n) = n + 3$, onde $n$ representa o loop \textit{for} e o 3, as instruções que não dependem da entrada.
-  \item Pior caso: ocorre quando a lista está completamente desordenada; o loop externo ocorre $n$ vezes e também o interno. Desse modo, temos uma complexidade expressa por algo como $g(n) = n^2 + 5$, onde 5 representa o total de instruções que não dependem da entrada e $n^2$ a quantidade de iterações total feito pelos loops.
-\end{itemize}
+\subsection{Análise do Algoritmo Iterativo}
+\input{bubblesort_sections/analysis/iteration_analysis.tex}
 
-Note que, para o melhor caso, o algoritmo tem complexidade $\Theta(n)$, pois:
-\begin{align*}
-    \lim_{n\to\infty} \frac{f(n)}{n} &= \lim_{n\to\infty} \frac{n + 3}{n} \\
-    &= \lim_{n\to\infty} 1 + \frac{3}{n} \\ 
-    &= 1 
-\end{align*}
-
-Adicionalmente, para o pior caso, o algoritmo tem complexidade $\Theta(n^2)$, pois:
-\begin{align*}
-    \lim_{n\to\infty} \frac{g(n)}{n} &= \lim_{n\to\infty} \frac{n^2 + 5}{n^2} \\
-    &= \lim_{n\to\infty} 1 + \frac{5}{n^2} \\ 
-    &= 1 
-\end{align*}
-
-Portanto, o algoritmo tem $\Omega(n)$, $O(n^2)$ e não há $\Theta$.
-
+\subsection{Análise do Algoritmo Recursivo}
+\input{bubblesort_sections/analysis/recursion_analysis.tex}

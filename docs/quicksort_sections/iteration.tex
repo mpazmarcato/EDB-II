@@ -1,7 +1,7 @@
 \subsection{Iterativa}
 \begin{verbatim}
 
-# Realiza a ordenação de um vetor desordenado com o algoritmo Quick Sort de forma iterativa.
+# Realiza a ordenação de um vetor desordenado com o algoritmo Quick Sort.
 quickSortIterative(vetor, valorEsquerda, valorDireita) {
     # Inicializa uma pilha para gerenciar os subvetores
     pilha = nova Pilha()
@@ -29,47 +29,4 @@ quickSortIterative(vetor, valorEsquerda, valorDireita) {
     }
 }
 
-# Função para particionar um vetor em dois baseado em um pivô.
-particiona(vetor, valorBaixo, valorAlto) { 
-  # Obter o valor central relativo ao vetor.
-  meio = valorBaixo + (valorAlto - valorBaixo) / 2
-  pivo = vetor[meio] # Obtém o pivô.
-
-  # Variáveis internas que controlam os índices em uso.
-  inicio = valorBaixo
-  final = valorAlto 
-  
-  # Percorre de uma extremidade à outra.
-  enquanto(inicio <= final) { 
-    # Ajusta o índice da extremidade esquerda até encontrar um elemento 
-    # à esquerda maior que o pivô.
-    enquanto (vetor[inicio] < pivo) { 
-      inicio++
-    }
-    # Ajusta o índice da extremidade direita até encontrar um elemento 
-    # à direita menor que o pivô.
-    enquanto (vetor[final] > pivo) {
-      final--
-    }
-
-    # Se os índices das extremidades não se encontraram, 
-    # os valores maiores e menores que o pivô não estão
-    # separados, fazendo necessária uma troca arbitrária.
-    se (inicio <= final) {
-      trocar(vetor, inicio, final)
-      inicio++
-      final--
-    }
-  }
-  
-  # Retorna a posição do novo pivô
-  retorne inicio
-}
-   
-# Função para trocar dois elementos em um vetor.
-trocar(vetor, indice1, indice2) { 
-  elementoAuxiliar = vetor[indice2]
-  vetor[indice2] = vetor[indice1]
-  vetor[indice1] = elementoAuxiliar
-}
-    \end{verbatim}
+\end{verbatim}
