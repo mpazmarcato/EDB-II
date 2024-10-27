@@ -3,3 +3,6 @@ docs/main.log
 docs/main.out
 docs/main.pdf
 docs/texput.log
+docs/main.fdb_latexmk
+docs/main.fls
+docs/main.synctex.gz
