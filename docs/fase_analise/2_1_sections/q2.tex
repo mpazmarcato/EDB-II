@@ -7,40 +7,47 @@
 #include <random>
 #include <chrono>
 
-std::vector<int> generateRandomAges(int n) {
-    std::vector<int> ages(n);
-    std::default_random_engine generator;
-    std::uniform_int_distribution<int> distribution(0, 100);
+std::vector<int> generateRandomAges(int size) {
+    std::vector<int> ages(size);
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(1, 100);
 
-    for (int i = 0; i < n; i++) {
-        ages[i] = distribution(generator);
+    for (int i = 0; i < size; ++i) {
+        ages[i] = dis(gen);
     }
+
     return ages;
 }
 
 int main() {
-    int sizes[] = {100, 1000, 1000000};
+    std::vector<int> sizes = {100, 1000, 10000};
 
-    for (int n : sizes) {
-        std::vector<int> randomAges = generateRandomAges(n);
-        
-        auto start = std::chrono::high_resolution_clock::now();
-        idadeRep(randomAges);
-        auto end = std::chrono::high_resolution_clock::now();
-        std::chrono::duration<double, std::micro> duration1 = end - start;
+    for (int size : sizes) {
+        std::vector<int> ages = generateRandomAges(size);
 
-        start = std::chrono::high_resolution_clock::now();
-        idadeRep2(randomAges);
-        end = std::chrono::high_resolution_clock::now();
-        std::chrono::duration<double, std::micro> duration2 = end - start;
+        // Medindo o tempo para idadeRep
+        auto start1 = std::chrono::high_resolution_clock::now();
+        bool result1 = idadeRep(ages);
+        auto end1 = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double> duration1 = end1 - start1;
 
-        std::cout << "n = " << n << ": "
-                  << "idadeRep: " << duration1.count() << " microsegundos, "
-                  << "idadeRep2: " << duration2.count() << " microsegundos" 
-                  << std::endl;
+        // Medindo o tempo para idadeRep2
+        auto start2 = std::chrono::high_resolution_clock::now();
+        bool result2 = idadeRep2(ages);
+        auto end2 = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double> duration2 = end2 - start2;
+
+        std::cout << "For vector size " << size << ":\n";
+        std::cout << "idadeRep: " << (result1 ? "repeated" : "no repeat") 
+                  << ", time taken: " << duration1.count() << " seconds\n";
+        std::cout << "idadeRep2: " << (result2 ? "repeated" : "no repeat") 
+                  << ", time taken: " << duration2.count() << " seconds\n";
+        std::cout << "-------------------------------------\n";
     }
 
     return 0;
 }
+
 
 \end{verbatim}
