@@ -7,32 +7,6 @@
 #include <random>
 #include <chrono>
 
-bool idadeRep(const std::vector<int>& Idade) {
-    int tam = Idade.size();
-    if (tam == 0) return false;
-
-    int menor = 200;  
-    for (int i = 0; i < tam; i++) {
-        if (Idade[i] < menor) {
-            menor = Idade[i];
-        }
-    }
-
-    int count = 0;
-    for (int i = 0; i < tam; i++) {
-        if (Idade[i] == menor) {
-            count++;
-        }
-    }
-
-    return count > 1; 
-}
-
-bool idadeRep2(std::vector<int> Idade) {
-    std::sort(Idade.begin(), Idade.end());
-    return Idade[0] == Idade[1];
-}
-
 std::vector<int> generateRandomAges(int n) {
     std::vector<int> ages(n);
     std::default_random_engine generator;
