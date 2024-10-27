@@ -1,31 +1,44 @@
-\subsection{Implemente os códigos idadeRep e idadeRep2}
+\subsection{Implemente os códigos buscaBinaria e bBinRec}
 
 Códigos implementados em C++.
 \begin{verbatim}
-    bool idadeRep(const std::vector<int>& Idade) {
-        int tam = Idade.size();
-        if (tam == 0) return false; 
-    
-        int menor = 200;  
-        for (int i = 0; i < tam; i++) {
-            if (Idade[i] < menor) {
-                menor = Idade[i];
-            }
-        }
-    
-        int count = 0;
-        for (int i = 0; i < tam; i++) {
-            if (Idade[i] == menor) {
-                count++;  
-            }
-        }
-    
-        return count > 1; 
+int buscaBinaria(const std::vector<int>& vec, int element) {
+  int left = 0;
+  int right = vec.size() - 1;
+  int middle;
+
+  while (left < right) {
+    middle = (left + right) / 2; 
+    if (element > vec[middle]) {
+      left = middle + 1;
     }
-    
-    bool idadeRep2(vector<int> Idade){
-        sort(Idade.begin(), Idade.end());
-        return Idade[0] == Idade[1];
+    else {
+      right = middle;
     }
+  }
+  if (vec[left] == element) {
+    return left;
+  }
+
+  return -1;
+}
+
+int bBinRec(const std::vector<int>& vec, int left, int right, int element) {
+  if (left > right) {
+    return -1;
+  }
+
+  int middle = (left + right) / 2;
+
+  if (vec[middle] == element) {
+    return middle;
+  }
+  else if (vec[middle] > element) {
+    return bBinRec(vec, left, middle - 1, element);
+  }
+  else {
+    return bBinRec(vec, middle + 1, right, element);
+  }
+}
 
 \end{verbatim}
