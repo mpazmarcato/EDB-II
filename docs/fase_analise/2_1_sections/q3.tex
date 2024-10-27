@@ -2,14 +2,13 @@
 
 \begin{table}[ht]
     \centering
-    \caption{Resultados do Desempenho das Funções `idadeRep` e `idadeRep2`}.
-
+    \caption{Resultados do Desempenho das Funções `idadeRep` e `idadeRep2`.}
     \begin{tabular}{@{}ccc@{}}
         \toprule
         Tamanho do Vetor (\(n\)) & Tempo `idadeRep` (µs) & Tempo `idadeRep2` (µs) \\ \midrule
-        100       & 1.797               & 31.966               \\
-        1000      & 11.495              & 323.371              \\
-        1.000.000 & 5575.52             & 251036               \\ \bottomrule
+        100       & 1.842               & 33.051               \\
+        1000      & 11.589              & 400.563              \\
+        10000     & 126.964             & 2260.4               \\ \bottomrule
     \end{tabular}
     \label{tab:resultados}
 \end{table}
@@ -17,7 +16,7 @@
 \begin{itemize}
     \item Análise de Desempenho das Funções \texttt{idadeRep} e \texttt{idadeRep2}
 \end{itemize}
-Através do teste de desempenho nas duas funções, \texttt{idadeRep} e \texttt{idadeRep2}, fomos verificar a presença de idades duplicadas em um vetor de inteiros variando de 0 a 100. Os testes foram conduzidos em três tamanhos diferentes de vetores: \( n = 100 \), \( n = 1000 \), e \( n = 1.000.000 \). Os resultados foram medidos em microsegundos e revelaram diferenças significativas no desempenho entre as duas abordagens.
+Através do teste de desempenho nas duas funções, \texttt{idadeRep} e \texttt{idadeRep2}, fomos verificar a presença de idades duplicadas em um vetor de inteiros variando de 0 a 100. Os testes foram conduzidos em três tamanhos diferentes de vetores: \( n = 100 \), \( n = 1000 \), e \( n = 10000 \). Os resultados foram medidos em microsegundos e revelaram diferenças significativas no desempenho entre as duas abordagens.
 
 \begin{itemize}
     \item Resultados Obtidos
@@ -27,20 +26,20 @@ Os resultados foram os seguintes:
 \begin{enumerate}
     \item Para \( n = 100 \):
     \begin{itemize}
-        \item \texttt{idadeRep}: 1.797 microsegundos
-        \item \texttt{idadeRep2}: 31.966 microsegundos
+        \item \texttt{idadeRep}: 1.842 microsegundos
+        \item \texttt{idadeRep2}: 33.051 microsegundos
     \end{itemize}
 
     \item Para \( n = 1000 \):
     \begin{itemize}
-        \item \texttt{idadeRep}: 11.495 microsegundos
-        \item \texttt{idadeRep2}: 323.371 microsegundos
+        \item \texttt{idadeRep}: 11.589 microsegundos
+        \item \texttt{idadeRep2}: 400.563 microsegundos
     \end{itemize}
 
-    \item Para \( n = 1.000.000 \):
+    \item Para \( n = 10000 \):
     \begin{itemize}
-        \item \texttt{idadeRep}: 5575.52 microsegundos (aproximadamente 5.58 milissegundos)
-        \item \texttt{idadeRep2}: 251036 microsegundos (aproximadamente 251.036 milissegundos)
+        \item \texttt{idadeRep}: 126.964 microsegundos (aproximadamente 0.127 milissegundos)
+        \item \texttt{idadeRep2}: 2260.4 microsegundos (aproximadamente 2.260 milissegundos)
     \end{itemize}
 \end{enumerate}
 
@@ -49,14 +48,11 @@ Os resultados foram os seguintes:
 \end{itemize}
 A função \texttt{idadeRep} possui uma complexidade de O(n), o que indica que seu tempo de execução aumenta linearmente com o tamanho do vetor. Isso foi evidente nos resultados, onde o tempo de execução cresceu de forma relativamente linear à medida que o tamanho do vetor aumentou.
 
-Por outro lado, a função \texttt{idadeRep2} apresenta uma complexidade de O(n log n), devido à operação de ordenação (\texttt{std::sort}). Isso resultou em um tempo de execução que cresceu mais rapidamente em comparação com \texttt{idadeRep}, especialmente à medida que \( n \) aumentou. Os resultados mostram que, para vetores pequenos (\( n = 100 \)), a diferença de desempenho não é tão pronunciada, mas para vetores maiores (\( n = 1.000.000 \)), a função \texttt{idadeRep} foi mais de 45 vezes mais rápida.
+Por outro lado, a função \texttt{idadeRep2} apresenta uma complexidade de O(n log n), devido à operação de ordenação (\texttt{std::sort}). Isso resultou em um tempo de execução que cresceu mais rapidamente em comparação com \texttt{idadeRep}, especialmente à medida que \( n \) aumentou. Os resultados mostram que, para vetores pequenos (\( n = 100 \)), a diferença de desempenho não é tão pronunciada, mas para vetores maiores (\( n = 10000 \)), a função \texttt{idadeRep} foi significativamente mais rápida.
 
 \begin{itemize}
     \item Conclusões
 \end{itemize}
-
 A análise revela que a função \texttt{idadeRep} é mais eficiente em termos de tempo de execução, sendo mais adequada para cenários em que a rapidez na verificação de duplicatas é crucial. A função \texttt{idadeRep2}, apesar de funcional, sofre um aumento significativo no tempo de execução devido ao custo da ordenação, tornando-se impraticável para grandes conjuntos de dados.
 
 Em resumo, ao lidar com grandes vetores, é essencial escolher algoritmos com complexidade mais baixa, como o da função \texttt{idadeRep}, para garantir um desempenho adequado e eficiente nas operações desejadas. Essa escolha é fundamental em aplicações onde a eficiência computacional é uma prioridade.
-
-
