@@ -1,2 +1,11 @@
 \subsubsection{Método da Iteração}
-Relação de Recorrência da quicksort recursiva em seu melhor caso, $T(n) = 2T(n/2) + n$. Utilizando o método iterativo, temos.
+Seja a função recursiva do pior caso da quicksort definida por $T(n) = T(n-1) + n$, utilizando o método da iteração, irei encontrar seu nível de complexidade. \\
+Expandindo a recorrência: \\
+$i = 1 : T(n - 1) + n$ \\
+$i = 2 : (T(n - 2) + (n -1)) + n$ \\
+$i = 3 : (T(n - 3) + (n - 2) + (n - 1)) + n$ \\
+$i : T(n - i) + ... + (n - 1) + n$ \\
+$1 + \sum_{i=2}^{n}k = 1 + (\frac{n(n-1)}{2} - 1)$ \\
+$= \frac{n(n-1)}{2}$ \\
+$= \frac{n^2 - n}{2}$ \\
+Note que, a complexidade que se sobrepõe é a de $n^2$, Logo, a relação de recorrência tem complexidade de $O(n^2)$.
