@@ -1,5 +1,8 @@
 \subsection{Análise do Algoritmo Recursivo}
-O algoritmo recursivo tem como função de complexidade $T(n) = T(n - 1) + n$. Resolveremos a recorrência pelos métodos abaixo:
+O algoritmo recursivo tem como função de complexidade $T(n) = T(n - 1) + n$ tanto para o melhor quanto para o pior caso.
+A cada chamada da função, é esperado que ao menos um elemento seja ordenado corretamente, ocupando a última posição na lista atual.
+Após isso, a função é chamada novamente, dessa vez passando somente o restante da lista que ainda não está ordenado, ou seja, a lista de $n - 1$ elementos. \\
+Resolveremos a recorrência pelos métodos abaixo:
 \input{bubblesort_sections/recursion_methods/recursion_method01.tex}
 \input{bubblesort_sections/recursion_methods/recursion_method03.tex}
 \input{bubblesort_sections/recursion_methods/recursion_method04.tex}
