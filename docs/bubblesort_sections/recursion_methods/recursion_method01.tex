@@ -1,2 +1,12 @@
 \subsubsection{Método da substituição}
-Seja a função recursiva do pior caso da bubblesort definida por $T(n) = T(n-1) + n$, utilizando o método da subs
+Seja a função recursiva do pior caso da bubblesort definida por $T(n) = T(n-1) + n$, utilizando o método da substituição, irei mostrar que $T(n) \le n^2 \cdot c$: \\
+Caso base, $n = 1$, $t(1) = 1$: \\
+$T(n) \le c \cdot n \Rightarrow (1 - 1) + 1 \le c \cdot 1 \Rightarrow 1 \le c$. \\
+Hipótese: $T(k) \le c \cdot k^2$, $\forall (1 < k \le n)$. \\
+Como $k - 1 < k$ vale por hipótese que $T(k - 1) \leq c \cdot (k-1)^2 $, então $T(k) \leq c (k-1)^2 + k$, isto é $T(k) \leq ck^2 - 2ck + c + k$. \\
+Calculemos $ck^2 - 2ck + c + k \leq ck^2$:\\
+$ck^2 - 2ck + c + k \leq ck^2 \Rightarrow$ \\
+$-2ck + c + k \leq 0 \Rightarrow$ \\
+$k(-2c + 1) + c \leq 0 \Rightarrow$ \\
+Note que essa desigualde será verdade para $1 \leq c$. \\
+Portanto, vale que o pior caso da bubblesort terá complexidade de $O(n^2)$.
