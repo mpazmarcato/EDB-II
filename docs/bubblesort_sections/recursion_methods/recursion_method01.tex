@@ -1,12 +1,43 @@
-\subsubsection{Método da substituição}
-Seja a função recursiva do pior caso da bubblesort definida por $T(n) = T(n-1) + n$, utilizando o método da substituição, irei mostrar que $T(n) \le n^2 \cdot c$: \\
-Caso base, $n = 1$, $t(1) = 1$: \\
-$T(n) \le c \cdot n \Rightarrow (1 - 1) + 1 \le c \cdot 1 \Rightarrow 1 \le c$. \\
-Hipótese: $T(k) \le c \cdot k^2$, $\forall (1 < k \le n)$. \\
-Como $k - 1 < k$ vale por hipótese que $T(k - 1) \leq c \cdot (k-1)^2 $, então $T(k) \leq c (k-1)^2 + k$, isto é $T(k) \leq ck^2 - 2ck + c + k$. \\
-Calculemos $ck^2 - 2ck + c + k \leq ck^2$:\\
-$ck^2 - 2ck + c + k \leq ck^2 \Rightarrow$ \\
-$-2ck + c + k \leq 0 \Rightarrow$ \\
-$k(-2c + 1) + c \leq 0 \Rightarrow$ \\
-Note que essa desigualde será verdade para $1 \leq c$. \\
-Portanto, vale que o pior caso da bubblesort terá complexidade de $O(n^2)$.
+\subsubsection{Método da Substituição}
+
+Seja a função recursiva do pior caso do Bubble Sort definida por \( T(n) = T(n-1) + n \). Utilizando o método da substituição, vamos mostrar que \( T(n) \leq c \cdot n^2 \):
+
+\textbf{Caso Base:} Para \( n = 1 \):
+\[
+T(1) = 1
+\]
+Queremos mostrar que \( T(1) \leq c \cdot 1^2 \), então:
+\[
+1 \leq c
+\]
+Logo, a desigualdade é satisfeita para \( c \geq 1 \).
+
+\textbf{Hipótese de Indução:} Suponha que para algum \( 1 < n \leq k \), temos \( T(k) \leq c \cdot k^2 \).
+
+\textbf{Passo Indutivo:} Queremos mostrar que \( T(k + 1) \leq c \cdot (k + 1)^2 \).
+
+Dada a recorrência \( T(k + 1) = T(k) + (k + 1) \), aplicamos a hipótese de indução:
+\[
+T(k + 1) = T(k) + (k + 1) \leq c \cdot k^2 + (k + 1)
+\]
+
+Agora, precisamos demonstrar que essa expressão é menor ou igual a \( c \cdot (k + 1)^2 \):
+\[
+c \cdot k^2 + (k + 1) \leq c \cdot (k + 1)^2
+\]
+Expanda o lado direito:
+\[
+c \cdot (k + 1)^2 = c \cdot (k^2 + 2k + 1) = c \cdot k^2 + 2c \cdot k + c
+\]
+Assim, a desigualdade torna-se:
+\[
+c \cdot k^2 + (k + 1) \leq c \cdot k^2 + 2c \cdot k + c
+\]
+
+Cancelando \( c \cdot k^2 \) de ambos os lados, obtemos:
+\[
+k + 1 \leq 2c \cdot k + c
+\]
+Isso é verdade para valores apropriados de \( c \); por exemplo, \( c \geq 1 \) é suficiente.
+
+\textbf{Conclusão:} Portanto, mostramos que \( T(n) = O(n^2) \) no pior caso para o Bubble Sort usando o método da substituição.
