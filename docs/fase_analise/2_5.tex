@@ -1,16 +1,28 @@
 \section{Tabela e análise detalhada dos resultados}
-Tabela para análise.
+Tabela Recursiva. \\
+
 \begin{table}[ht!]
     \centering
-    \begin{tabular}{|c|c|c|c|c|}
+    \begin{tabular}{|c|c|c|c|}
     \hline
-    \textbf{Elementos} & \textbf{Tempo} &\textbf{Mergesort} & \textbf{Bubblesort} & \textbf{Quicksort} \\ \hline
-     1 & n sei & n sei & n sei & n sei \\ \hline
-     10 & n sei & n sei & n sei & n sei \\ \hline
-     100 & n sei & n sei & n sei & n sei \\ \hline
-     1000 & n sei & n sei & n sei & n sei \\ \hline
-     (...) & & & & \\ \hline
-     i & n sei & n sei & n sei & n sei \\ \hline 
+    \textbf{Elementos} &\textbf{Mergesort} & \textbf{Bubblesort} & \textbf{Quicksort} \\ \hline
+     1k & 0 & 5 & 0  \\ \hline
+     10k & 4 & 622 & 1  \\ \hline
+     100k & 49 & 62063 & 30  \\ \hline
     \end{tabular}  
-    \caption{Árvore de recursão do Bubble Sort Recursivo}
+    \caption{Comparação de tempo em ms}
+\end{table}
+
+Tabela Iterativa. \\
+
+\begin{table}[ht!]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    \textbf{Elementos} &\textbf{Mergesort} & \textbf{Bubblesort} & \textbf{Quicksort} \\ \hline
+     1k & 0 & 5 & 0  \\ \hline
+     10k & 4 & 623 & 2  \\ \hline
+     100k & 48 & 62063 & 37  \\ \hline
+    \end{tabular}  
+    \caption{Comparação de tempo em ms}
 \end{table}
