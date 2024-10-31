@@ -2,7 +2,7 @@
 
 const int ARRAY_SIZE = 10;
 
-void bubblesort(int array[], int size) {
+void bubbleSortIterative(int array[], int size) {
   bool hasConflict;
   do {
     hasConflict = false;
@@ -21,7 +21,7 @@ int main() {
   printArray(array, ARRAY_SIZE);
 
   std::cout << "Sorting now... \n";
-  bubblesort(array, ARRAY_SIZE);
+  bubbleSortIterative(array, ARRAY_SIZE);
 
   std::cout << "Array is now sorted... \n";
   printArray(array, ARRAY_SIZE);
