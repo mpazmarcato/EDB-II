@@ -2,19 +2,12 @@
 Seja a função recursiva do pior caso do bubblesort definida por \( T(n) = T(n-1) + n \). Utilizando o método da iteração, vamos encontrar seu nível de complexidade. 
 
 Expandindo a recorrência:
-
-\[
-i = 1 : T(n) = T(n - 1) + n
-\]
-\[
-i = 2 : T(n) = (T(n - 2) + (n - 1)) + n
-\]
-\[
-i = 3 : T(n) = (T(n - 3) + (n - 2) + (n - 1)) + n
-\]
-\[
-i : T(n) = T(n - i) + \dots + (n - 1) + n
-\]
+\begin{align*}
+i = 1 : &T(n) = T(n - 1) + n \\
+i = 2 : &T(n) = (T(n - 2) + (n - 1)) + n \\
+i = 3 : &T(n) = (T(n - 3) + (n - 2) + (n - 1)) + n \\
+i : & T(n) = T(n - i) + \dots + (n - 1) + n
+\end{align*}
 
 Assim, temos:
 
