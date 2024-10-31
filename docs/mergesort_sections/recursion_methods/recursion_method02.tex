@@ -3,29 +3,11 @@ Seja a função recursiva da mergesort definida por \( T(n) = 2T\left(\frac{n}{2
 
 Expandindo a recorrência:
 
-\[
-\begin{aligned}
-&i = 1 : \quad T(n) = 2T\left(\frac{n}{2}\right) + n    
-\end{aligned}
-\]
-
-\[
-\begin{aligned}
-&i = 2 : \quad T(n) = 2\left(2T\left(\frac{n}{4}\right) + \frac{n}{2}\right) + n = 4T\left(\frac{n}{4}\right) + n + n = 4T\left(\frac{n}{4}\right) + 2n
-\end{aligned}
-\]
-
-\[
-\begin{aligned}
-&i = 3 : \quad T(n) = 4\left(2T\left(\frac{n}{8}\right) + \frac{n}{4}\right) + 2n = 8T\left(\frac{n}{8}\right) + n + 2n = 8T\left(\frac{n}{8}\right) + 3n
-\end{aligned}
-\]
-
-\[
-.
-.
-.
-\]
+\begin{align*}
+i = 1 : &\quad T(n) = 2T\left(\frac{n}{2}\right) + n \\
+i = 2 : &\quad T(n) = 2\left(2T\left(\frac{n}{4}\right) + \frac{n}{2}\right) + n = 4T\left(\frac{n}{4}\right) + n + n = 4T\left(\frac{n}{4}\right) + 2n\\
+i = 3 : &\quad T(n) = 4\left(2T\left(\frac{n}{8}\right) + \frac{n}{4}\right) + 2n = 8T\left(\frac{n}{8}\right) + n + 2n = 8T\left(\frac{n}{8}\right) + 3n\\
+\end{align*}
 
 De forma geral, temos:
 
