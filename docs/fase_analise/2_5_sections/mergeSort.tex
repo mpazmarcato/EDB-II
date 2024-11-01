@@ -1,7 +1,9 @@
-\subsection{Mergesort}
+\subsubsection{Análise do Algoritmo Mergesort}
 
-No algoritimo Mergesort é possível notar que o tempo de execução para ordenar pequenos conjuntos, com menos de mil elementos, é aproximadente 0 ms, assim o tornando extremamente eficaz para essa quantidade de elementos. \\
+\hspace{0.6cm}O Mergesort é um algoritmo de ordenação eficiente, especialmente notável para conjuntos de dados. Para conjuntos com menos de mil elementos, o tempo de execução é praticamente 0 ms. Isso se deve à eficiência do algoritmo, uma vez que a sobrecarga nas chamadas de função é mínima, tornando ambas as versões (recursiva e iterativa) competitivas. Além disso, otimizações de hardware em máquinas modernas permitem que operações básicas sejam realizadas rapidamente em pequenos conjuntos.
 
-Isso é notável tanto na versão recursiva como na iterativa, a diferença entre as duas versões torna-se visível a partir de conjuntos com mais de 100k elemtos, com maior velocidade de execução na versão iterativa, ordenando a lista em um tempo de aproximadamente 48 ms, enquanto a recursiva realizou a ordenação em 49 ms. \\
+Com conjuntos acima de 100 mil elementos, a diferença de desempenho entre as versões se torna levemente mais evidente. A versão iterativa leva aproximadamente 48 ms, enquanto a versão recursiva leva cerca de 49 ms. Essa diferença pode ser atribuída a dois fatores principais. Primeiro, a versão iterativa evita a sobrecarga associada às chamadas recursivas, melhorando a performance. Em segundo lugar, a versão recursiva utiliza mais memória devido à pilha de chamadas, impactando o desempenho.
 
-Portanto, é notório que para conjuntos com menos de 100k elementos, as suas duas versões possuem tempos de execução semelhantes, assim tornando-o eficaz para ordenar dados com essas quantidades de elementos.
+Em termos de complexidade, o Mergesort possui uma complexidade de tempo de \(O(n \log n)\) para o pior caso, melhor caso e caso médio. Isso ocorre porque o algoritmo divide a lista em duas metades recursivamente, o que gera \(\log n\) divisões, e cada divisão requer \(O(n)\) tempo para mesclar as sublistas ordenadas.
+
+Para conjuntos pequenos, ambas as versões apresentam desempenho similar. No entanto, para conjuntos grandes, a versão iterativa é mais eficiente e se torna a escolha recomendada em situações que exigem ordenação de dados extensos. Essa análise ajuda na seleção do algoritmo mais apropriado, considerando a natureza e o tamanho dos dados.

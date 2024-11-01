@@ -1,7 +1,9 @@
-\subsection{Quicksort}
+\subsubsection{Quicksort}
 
-No Quicksort é possível observar que, para conjuntos de até 100k elementos, ele é extramamente eficaz, principalmente sua versão recursiva com aproximadamente 1 ms de tempo de execução em uma lista de 10k elementos. \\
+\hspace{0.6cm}O Quicksort se destaca como um algoritmo extremamente eficaz para conjuntos de até 100k elementos, com sua versão recursiva apresentando um tempo de execução de aproximadamente 1 ms em listas de 10k elementos. Essa eficiência pode ser atribuída à sua complexidade média de tempo de \(O(n \log n)\), que resulta da divisão recursiva da lista em sublistas menores, permitindo que o algoritmo processe os dados de forma mais rápida em comparação a métodos menos eficientes.
 
-Além disso, é notório que há uma diferença entre suas versões em tempo de execução ao ordenar listas de 10k elementos, permitindo inferir que a versão recursiva torna-se mais rápida a partir dos conjuntos com mais de 10k elementos, enquanto para conjuntos menores, as duas versões possuem tempo de execução aproximado de 0 ms. \\
+A diferença de desempenho entre as versões recursiva e iterativa se torna evidente em conjuntos maiores. A versão recursiva é mais rápida a partir de 10k elementos, enquanto para conjuntos menores, ambas as versões têm tempos de execução próximos de 0 ms. Isso se deve ao fato de que a sobrecarga das chamadas recursivas é mínima em listas pequenas, permitindo que o Quicksort opere rapidamente, mesmo em suas implementações iterativa e recursiva.
 
-Portanto, é observável que o Quicksort é um algoritmo extremamente eficaz para casos de dados com até 100k elementos, tornando-o versátil e eficiente para a maioria dos casos. Isso é notório principalmente em sua versão recursiva, apesar da iterativa ser mais lenta, ainda mantém-se como um algorítimo veloz.
+Entretanto, é importante considerar que, no pior caso, a complexidade do Quicksort pode chegar a \(O(n^2)\), o que ocorre em situações em que a lista já está ordenada ou quase ordenada. Essa situação se deve à escolha de pivô ineficiente, levando a uma divisão desigual das sublistas. Para mitigar esse problema, é comum implementar estratégias de escolha de pivô, como o pivô aleatório ou o método do "pivô mediano", que ajudam a manter o desempenho do algoritmo em \(O(n \log n)\).
+
+Assim, o Quicksort é versátil e eficiente, sendo uma escolha recomendada para a ordenação de grandes conjuntos de dados, especialmente a sua versao recursiva devido ao seu desempenho superior em comparação à iterativa.
