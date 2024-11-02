@@ -1,5 +1,62 @@
 \subsubsection{Método da Substituição}
 
-Pelo método da substituição, mostremos que $T(n)$ é $O(n \cdot log n)$ para o melhor caso.
+Pelo método da substituição, mostremos que $T(n)$ é $O(n \cdot \log n)$ para o melhor caso, ou seja, que $T(n) \le c \cdot n \log_2 n + d$: \\
+\textbf{Demonstração.} \\
+Seja $T(n) = 2T(\frac{n}{2}) + n$. \\
+Caso base: $n = 2, T(2) = 2$:
+\begin{align*} 
+  T(n) \le c \cdot n \log_2 n + d & \implies T(2) \le c \cdot (2 \log_2 2) + d \\ 
+  &\implies 2 \le c \cdot 2 + d\\ 
+  &\implies c + \frac{d}{2} \ge 1 
+\end{align*}
+Portanto, o caso base é verdadeiro. \\
+Hipótese Indutiva: Suponha um $k \in \mathbb{N}$ arbitrário, tal que $T(k) \le c \cdot (k \cdot \log_2 k) + d$. \\
+Agora, note que $\frac{k}{2} < k, \forall k > 2$. Então, temos:
+\begin{align*}
+  T(k) \le 2T(\frac{k}{2}) + k  & \implies 2T(\frac{k}{2}) + k \le 2 \cdot (c \cdot \frac{k}{2} \cdot \log_2 \frac{k}{2} + d) + k & \quad \text{(Por H.I)} \\
+  & \implies 2 \cdot (c \cdot \frac{k}{2} \cdot \log_2 \frac{k}{2} + d) + k  \le c \cdot k \cdot \log_2 k + d \\
+  & \implies ck \cdot \log_2 \frac{k}{2} + 2d + k \le ck \cdot \log_2 k + d \\
+  & \implies ck \cdot (\log_2 k - \log_2 2) + 2d + k \le ck \cdot \log_2 k + d & \quad \text{(Por prop. de $\log$)} \\
+  & \implies ck\log_2 k - ck  + 2d + k \le ck \cdot \log_2 k + d & \quad \text{($log_a a = 1$)} \\
+  & \implies k - ck  + 2d \le d \\
+  & \implies k - ck \le -d \\
+  & \implies ck - k \ge d \\
+\end{align*}
+Assuma que $d = ck - k$. Logo, temos:
+\begin{align*}
+  c + \frac{d}{2} \ge 1 & \implies c + \frac{ck - k}{2} \ge 1 \\
+  & \implies c + \frac{2c - 2}{2} \ge 1 & \quad \text{(Assuma $k = 2$.)} \\
+  & \implies c + c - 1 \ge 1 \\
+  & \implies 2c \ge 2 \\
+  & \implies c \ge 1 \\
+\end{align*}
+Portanto, vale que o melhor caso para o Quick Sort recursivo é $O(n \log_2 n)$. \\
+Então, mostremos que $T(n)$ é $O(n^2)$ para o pior caso, ou seja, que $T(n) \le c \cdot n^2$. \\
+\textbf{Demonstração.} \\
+Seja $T(n) = T(n - 1) + n$. \\
+Caso base: $n = 1, T(1) = 1$:
+\begin{align*}
+  T(n) \le c \cdot n^2 & \implies T(1) \le c \cdot 1^2 \\
+  & \implies c \ge 1 
+\end{align*}
 
-Então, mostremos que $T(n)$ é $O(n^2)$ para o pior caso.
+Portanto, o caso base é verdadeiro. \\
+Hipótese Indutiva: Suponha um $k \in \mathbb{N}$ arbitrário, tal que $T(k) \le c \cdot k^2$. \\
+Agora, note que $k - 1 \le k, \forall k > 1$. Logo, temos:
+\begin{align*}
+  T(k) \le T(k - 1) + k & \implies T(k - 1) + k \le c \cdot (k-1)^2 + k & \quad \text{(Por H.I)} \\
+  & \implies c \cdot (k-1)^2 + k \le c \cdot k^2  \\
+  & \implies c \cdot (k^2 - 2k + 1) + k \le c \cdot k^2  \\
+  & \implies ck^2 - 2ck + c + k \le c \cdot k^2  \\
+  & \implies c - 2ck + k \le 0  \\
+  & \implies k - 2ck \le -c  \\
+  & \implies k(1 - 2c) \le -c  \\
+  & \implies 2(1 - 2c) \le -c &\quad \text{(Assuma $k = 2$)} \\
+  & \implies 2 - 4c\le -c \\
+  & \implies 1 - \frac{4c}{2} \le \frac{-c}{2} &\quad \text{(Divisão por 2)} \\
+  & \implies 1 \le \frac{-c}{2} + \frac{4c}{2}\\
+  & \implies 1 \le \frac{3c}{2} \\
+  & \implies 1 \approx \frac{2}{3} \le c \\
+\end{align*}
+
+Portanto, vale que o pior caso do Quick Sort recursivo é $O(n^2)$.
