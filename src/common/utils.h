@@ -1,5 +1,11 @@
 #include <iostream>
 #include <vector>
+#include <fstream>
+#include <chrono>
+
+const int ARRAY_SIZE_1000 = 1000;
+const int ARRAY_SIZE_10000 = 10000;
+const int ARRAY_SIZE_100000 = 100000;
 
 void printArray(int array[], int n) {
   std::cout << "This is the array now: \n";
@@ -41,6 +47,20 @@ void merge(std::vector<int>& arr, int left, int mid, int right) {
     while (i < n1) arr[k++] = L[i++];
     while (j < n2) arr[k++] = R[j++];
     
+}
+
+void readArrayFromFile(const std::string& fileName, int array[], int size) {
+    std::ifstream file(fileName);
+    if (!file.is_open()) {
+        std::cerr << "Failed to open file: " << fileName << std::endl;
+        return;
+    }
+
+    for (int i = 0; i < size; ++i) {
+        file >> array[i];
+    }
+
+    file.close();
 }
 
 void swap(int array[], int index1, int index2) { 

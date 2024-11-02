@@ -1,6 +1,7 @@
 \subsection{Análise do Algoritmo Iterativo}
 
 O algoritmo Quick Sort utiliza a estratégia de divisão e conquista, selecionando um pivô e particionando o array ao redor desse pivô, de modo que os elementos menores que o pivô fiquem à esquerda e os maiores à direita. A complexidade do Quick Sort varia conforme a escolha do pivô.
+
 \subsubsection{Melhor caso: \(\Omega(n \log n)\)}
 No melhor caso, o pivô divide o array em duas partes aproximadamente iguais em cada iteração. Assim, a profundidade da recursão é logarítmica e, em cada nível da recursão, são feitas \(n\) comparações para particionar o array. A complexidade pode ser expressa por algo como:
 \[
@@ -19,25 +20,6 @@ Isso se simplifica para:
 \]
 
 Assim, a complexidade do melhor caso é \(\Omega(n \log n)\).
-
-\subsubsection{Caso médio: \(\Theta(n \log n)\)}
-No caso médio, o pivô não necessariamente divide o array em duas metades iguais, mas o processo de partição ainda ocorre de maneira equilibrada em várias divisões. Assim, a profundidade média da recursão ainda será proporcional a \( \log n \), e o número total de comparações também será \(n \log n\), resultando em uma complexidade média:
-\[
-g(n) = n \log n + 4
-\]
-Onde \(4\) é a constante \(k\) representando as operações fixas, como trocas de elementos e verificações. Calculamos o limite:
-
-\[
-\lim_{n \to \infty} \frac{g(n)}{n \log n} = \lim_{n \to \infty} \frac{n \log n + 4}{n \log n}
-\]
-
-Isso se simplifica para:
-
-\[
-= \lim_{n \to \infty} \left(1 + \frac{4}{n \log n}\right) = 1 + 0 = 1
-\]
-
-Assim, a complexidade do caso médio é \(\Theta(n \log n)\).
 
 \subsubsection{Pior caso: \(O(n^2)\)}
 No pior caso, o pivô escolhido é o menor ou o maior elemento, o que resulta em uma partição altamente desequilibrada, onde um dos subarrays é vazio e o outro contém todos os elementos restantes. Nesse cenário, o Quick Sort se degrada para uma estrutura semelhante à de um algoritmo de ordenação por seleção, executando \(n\) comparações em cada nível da recursão, com uma profundidade de recursão de \(n\). A complexidade pode ser expressa como:
@@ -61,7 +43,7 @@ Assim, a complexidade do pior caso é \(O(n^2)\).
 \subsubsection{Conclusão}
 \begin{itemize}
   \item Melhor caso: \(\Omega(n \log n)\)
-  \item Caso médio: \(\Theta(n \log n)\)
   \item Pior caso: \(O(n^2)\)
 \end{itemize}
-O Quick Sort é eficiente na prática devido à sua complexidade média \(\Theta(n \log n)\), mas a escolha cuidadosa do pivô pode evitar o pior caso \(O(n^2)\), como no método da mediana de três ou na escolha aleatória de pivô.
+
+Portanto, a algoritmo tem pior caso \(O(n^2)\), melhor caso \(\Omega(n \log n)\) e não há $\Theta$.

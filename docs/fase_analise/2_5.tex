@@ -1,0 +1,39 @@
+\section{Tabela e análise detalhada dos resultados}
+
+O caminho para o arquivo com o tempo de execução dos algoritmos está em: \newline
+\texttt{docs/algorithms\_analysis/exercise/results\_file}.
+
+\subsection{Tabela Recursiva}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Elementos} & \textbf{Mergesort} & \textbf{Bubblesort} & \textbf{Quicksort} \\ \hline
+        1k & 0 & 5 & 0 \\ \hline
+        10k & 4 & 622 & 1 \\ \hline
+        100k & 49 & 61632 & 30 \\ \hline
+    \end{tabular}
+    \caption{Comparação de tempo em ms - Algoritmos Recursivos}
+\end{table}
+
+\subsection{Tabela Iterativa}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Elementos} & \textbf{Mergesort} & \textbf{Bubblesort} & \textbf{Quicksort} \\ \hline
+        1k & 0 & 5 & 0 \\ \hline
+        10k & 4 & 623 & 2 \\ \hline
+        100k & 48 & 62063 & 37 \\ \hline
+    \end{tabular}
+    \caption{Comparação de tempo em ms - Algoritmos Iterativos}
+\end{table}
+
+\subsection{Análise dos Algoritmos}
+
+\input{fase_analise/2_5_sections/bubbleSort.tex}
+\input{fase_analise/2_5_sections/mergeSort.tex}
+\input{fase_analise/2_5_sections/quickSort.tex}
+\input{fase_analise/2_5_sections/conclusion.tex}
