@@ -1,8 +1,8 @@
 \subsection{Análise do Algoritmo Recursivo}
 Note que o algoritmo recursivo tem duas possíveis relações de recorrência para o melhor e pior caso. \\
 \begin{itemize}
-  \item Melhor caso: ocorre quando a escolha do pivô particiona o vetor em duas partes quase iguais, gerando a relação de recorrência dada por $T(n) = 2T(\frac{n}{2}) + \Theta(n)$.
-  \item Pior caso: ocorre quando a escolha do pivô particiona o vetor de forma em um subvetor de tamanho mínimo e outro com todos os elementos, gerando a relação de recorrência dada por $T(n) = T(n - 1) + T(1) + \Theta(n)$.
+  \item Melhor caso: ocorre quando a escolha do pivô particiona o vetor em duas partes quase iguais, gerando a relação de recorrência dada por $T(n) = 2T(\frac{n}{2}) + n$.
+  \item Pior caso: ocorre quando a escolha do pivô particiona o vetor de forma em um subvetor de tamanho mínimo e outro com todos os elementos, gerando a relação de recorrência dada por $T(n) = T(n - 1) + n$.
 \end{itemize}
 
 \input{quicksort_sections/recursion_methods/recursion_method01.tex}
