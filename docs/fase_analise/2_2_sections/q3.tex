@@ -1,0 +1,48 @@
+\subsection{Compute os tempos de processamento e compare}
+
+\begin{table}[ht]
+    \centering
+    \caption{Resultados do Desempenho das Funções `buscaBinaria` e `bBinRec`.}
+    \begin{tabular}{@{}cccc@{}}
+        \toprule
+        Tamanho do Vetor (\(n\)) & Elemento Procurado & Tempo `buscaBinaria` (µs) & Tempo `bBinRec` (µs) \\ \midrule
+        100       & 40 & 0.655               & 0.565               \\
+        1000      & 22 & 0.733              & 0.507              \\
+        10000     & 93 & 0.845             & 0.545               \\ \bottomrule
+    \end{tabular}
+    \label{tab:resultados}
+\end{table}
+
+Através de testes de desempenho nas duas funções, buscamos comparar o tempo de processamento gasto entre a versão iterativa (\texttt{buscaBinaria}) e recursiva (\texttt{bBinRec}) da busca binária. Para isso, instanciamos três vetores de tamanhos 100, 1000 e 10000, gerando 1 número aleatório a ser procurado em cada instância: 40, 22 e 93.
+
+\subsubsection{Resultados}
+Os resultados foram os seguintes:
+
+\begin{enumerate}
+    \item Para \( n = 100 \), \( element = 40 \):
+    \begin{itemize}
+        \item \texttt{buscaBinaria}: 0.655 microsegundos
+        \item \texttt{bBinRec}: 0.565 microsegundos
+    \end{itemize}
+
+    \item Para \( n = 1000 \), \( element = 22 \):
+    \begin{itemize}
+        \item \texttt{buscaBinaria}: 0.733 microsegundos
+        \item \texttt{bBinRec}: 0.507 microsegundos
+    \end{itemize}
+
+    \item Para \( n = 10000 \), \( element = 93 \):
+    \begin{itemize}
+        \item \texttt{buscaBinaria}: 0.845 microsegundos
+        \item \texttt{bBinRec}: 0.545 microsegundos
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection{Análise das Funções}
+Ambas as funções têm como complexidade $O(\log_2 n)$, pois, a cada iteração, dividem o vetor inicial pela metade. Pela natureza do algoritmo de separar o problema inicial em partes menores, sua velocidade de execução é ótima, como visto nos testes acima. Outro fator que contribui para sua agilidade é a desnecessidade de percorrer todo o vetor, bastando apenas verificar o elemento do meio e tomar uma decisão a partir deste.
+
+\subsubsection{Conclusões}
+
+Portanto, nota-se que a busca recursiva é mais rápida em comparação à iterativa tanto para problemas pequenos (100) quanto maiores (10000). No entanto, é importante lembrar que as sucessivas chamadas recursivas de \texttt{bBinRec} ocupam espaço na memória \texttt{stack} e, a depender do tamanho do problema, pode causar problemas de lentidão ou até mesmo levar à interrupção da execução. \\
+
+Desse modo, apesar de ambas as funções terem tempos similares de execução e mesma complexidade, a função recursiva \texttt{bBinRec} pode ser mais adequada na grande maioria dos casos, não sendo muito recomendada somente se o tamanho do problema for muito grande.
