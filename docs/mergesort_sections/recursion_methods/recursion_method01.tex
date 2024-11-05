@@ -1,1 +1,46 @@
 \subsubsection{Método da Substituição}
+
+Seja a função recursiva do Mergesort definida por \( T(n) = 2T(\frac{n}{2}) + n \). Utilizando o método da substituição, vamos mostrar que \( T(n) \leq c \cdot n\log_2 n \):
+
+\textbf{Caso Base:} Para \( n = 1 \):
+\[ T(1) = 1 \]
+Queremos mostrar que \( T(1) \leq c \cdot 1\log_2 1 \), então:
+\[ 1 \leq 0 \]
+Logo, precisamos adicionar uma constante apropriada para garantir que o caso base seja verdadeiro.
+Modificamos nossa suposição para \( T(n) \leq c \cdot n\log_2 n + d \), onde \( d \geq 1 \).
+
+\textbf{Hipótese de Indução:} Suponha que para algum \( n \geq 1 \), temos \( T(k) \leq c \cdot k\log_2 k + d \) para todo \( k < n \).
+
+\textbf{Passo Indutivo:} Queremos mostrar que \( T(n) \leq c \cdot n\log_2 n + d \).
+
+Dada a recorrência \( T(n) = 2T(\frac{n}{2}) + n \), aplicamos a hipótese de indução:
+\[ T(n) = 2T(\frac{n}{2}) + n \leq 2(c \cdot \frac{n}{2}\log_2 \frac{n}{2} + d) + n \]
+
+Simplificando:
+\[ = cn\log_2 \frac{n}{2} + 2d + n \]
+\[ = cn\log_2 n - cn\log_2 2 + 2d + n \]
+\[ = cn\log_2 n - cn + 2d + n \]
+
+Precisamos mostrar que:
+\[ cn\log_2 n - cn + 2d + n \leq cn\log_2 n + d \]
+
+Simplificando:
+\[ -cn + 2d + n \leq d \]
+\[ n(1-c) + 2d \leq d \]
+\[ n(1-c) \leq -d \]
+
+Como precisamos que isso seja válido para todo \( n \geq 1 \), podemos usar o caso limite \( n = 1 \):
+\[ 1(c-1) \geq d \]
+\[ c-1 \geq d \]
+\[ c \geq d+1 \]
+
+Como temos que \( c \geq d+1 \) e sabemos que \( d \geq 1 \), então:
+
+\[ d \geq 1 \]
+\[ d + 1 \geq 1 + 1 \]
+\[ d + 1 \geq 2 \]
+
+E como \( c \geq d+1 \), por transitividade:
+\[ c \geq 2 \]
+
+\textbf{Conclusão:} Mostramos que \( T(n) = O(n\log n) \) para o Mergesort usando o método da substituição, com constantes \( c \geq 2 \) e \( d \geq 1 \).
