@@ -1,18 +1,26 @@
-Bubble Sort Iterative (1k elements) took 5 ms to sort the list.
-Bubble Sort Iterative (10k elements) took 623 ms to sort the list.
-Bubble Sort Iterative (100k elements) took 62063 ms to sort the list.
-Bubble Sort Recursive (1k elements) took 5 ms to sort the list.
-Bubble Sort Recursive (10k elements) took 622 ms to sort the list.
-Bubble Sort Recursive (100k elements) took 61632 ms to sort the list.
-Merge Sort Iterative (1k elements) took 0 ms to sort the list.
-Merge Sort Iterative (10k elements) took 4 ms to sort the list.
-Merge Sort Iterative (100k elements) took 48 ms to sort the list.
-Merge Sort Recursive (1k elements) took 0 ms to sort the list.
-Merge Sort Recursive (10k elements) took 4 ms to sort the list.
-Merge Sort Recursive (100k elements) took 49 ms to sort the list.
-Quick Sort Iterative (1k elements) took 0 ms to sort the list.
-Quick Sort Iterative (10k elements) took 2 ms to sort the list.
-Quick Sort Iterative (100k elements) took 37 ms to sort the list.
-Quick Sort Recursive (1k elements) took 0 ms to sort the list.
-Quick Sort Recursive (10k elements) took 1 ms to sort the list.
-Quick Sort Recursive (100k elements) took 30 ms to sort the list.
+Processing list of size: 1000
+
+Bubble Sort Iterative took 11 ms
+Bubble Sort Recursive took 7 ms
+Merge Sort Recursive took 1 ms
+Merge Sort Iterative took 1 ms
+Quick Sort Recursive took 0 ms
+Quick Sort Iterative took 0 ms
+
+Processing list of size: 10000
+
+Bubble Sort Iterative took 407 ms
+Bubble Sort Recursive took 227 ms
+Merge Sort Recursive took 5 ms
+Merge Sort Iterative took 4 ms
+Quick Sort Recursive took 1 ms
+Quick Sort Iterative took 3 ms
+
+Processing list of size: 100000
+
+Bubble Sort Iterative took 49676 ms
+Bubble Sort Recursive took 36172 ms
+Merge Sort Recursive took 58 ms
+Merge Sort Iterative took 58 ms
+Quick Sort Recursive took 21 ms
+Quick Sort Iterative took 30 ms
