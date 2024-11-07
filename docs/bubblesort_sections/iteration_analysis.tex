@@ -5,14 +5,14 @@ O algoritmo iterativo tem diferentes funções de complexidade para cada caso:
   \item Pior caso: ocorre quando a lista está completamente desordenada; o loop externo ocorre $n$ vezes e também o interno. Desse modo, temos uma complexidade expressa por algo como $g(n) = n^2 + 5$, onde 5 representa o total de instruções que não dependem da entrada e $n^2$ a quantidade de iterações total feito pelos loops.
 \end{itemize}
 
-Note que, para o melhor caso, o algoritmo tem complexidade $\Theta(n)$, pois:
+Note que, para o melhor caso, o algoritmo tem complexidade $\Omega(n)$, pois:
 \begin{align*}
     \lim_{n\to\infty} \frac{f(n)}{n} &= \lim_{n\to\infty} \frac{n + 3}{n} \\
     &= \lim_{n\to\infty} 1 + \frac{3}{n} \\ 
     &= 1 
 \end{align*}
 
-Adicionalmente, para o pior caso, o algoritmo tem complexidade $\Theta(n^2)$, pois:
+Adicionalmente, para o pior caso, o algoritmo tem complexidade $O(n^2)$, pois:
 \begin{align*}
     \lim_{n\to\infty} \frac{g(n)}{n} &= \lim_{n\to\infty} \frac{n^2 + 5}{n^2} \\
     &= \lim_{n\to\infty} 1 + \frac{5}{n^2} \\ 

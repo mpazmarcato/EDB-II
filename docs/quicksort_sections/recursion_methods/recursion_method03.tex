@@ -40,11 +40,11 @@ Utilizando o método árvore de recorrência.
     \hline
     \textbf{Nível} & \textbf{Tamanho} & $\#$\textbf{Nós} & \textbf{Tempo} \\ \hline
      0 & n & 1 & n \\ \hline
-     1 & $n - 1$ & 1 & $n/2$ \\ \hline
-     2 & $n - 2$ & 1 & $n/4$ \\ \hline
-     3 & $n - 3$ & 1 & $n/8$ \\ \hline
+     1 & $n - 1$ & 1 & $n - 1$ \\ \hline
+     2 & $n - 2$ & 1 & $n - 2$ \\ \hline
+     3 & $n - 3$ & 1 & $n - 3$ \\ \hline
      (...) & & & \\ \hline
-     i & $n - i$ & $1$ & $n/2^i$ \\ \hline 
+     i & $n - i$ & $1$ & $n - i$ \\ \hline 
     \end{tabular}  
     \caption{Árvore de recursão}
 \end{table}
@@ -55,7 +55,7 @@ Calculando o somatório do tempo x nós.
 \]
 
 \[
-\sum_{i = 0}^{n - 1} \left(\dfrac{n}{2^i}\right) = 2n \cdot \left(1 - \dfrac{1}{2^n}\right)
+\sum_{i = 0}^{n - 1} \left(i\right) = \frac{n \left(n + 1\right)}{2}= \frac{n^2 + n}{2}
 \]
 
-Logo, ele é $\Theta (n)$, pois o $2^n$ está tendendo a 0, tornando o n a complexidade predominante.
+Logo, ele é $\Theta (n^2)$, pois o $2^n$ é a complexidade dominante entre $n^2$ e $n$.
