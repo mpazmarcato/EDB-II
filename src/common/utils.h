@@ -7,13 +7,6 @@ const int ARRAY_SIZE_1000 = 1000;
 const int ARRAY_SIZE_10000 = 10000;
 const int ARRAY_SIZE_100000 = 100000;
 
-void printArray(int array[], int n) {
-  std::cout << "This is the array now: \n";
-  for (int i = 0; i < n; i++) {
-    std::cout << "Position " << i + 1 << ": " << array[i] << "\n";
-  }
-}
-
 void printVector(std::vector<int>& arr) {
     for (int i = 0; i < arr.size(); i++)
         std::cout << arr[i] << " ";
