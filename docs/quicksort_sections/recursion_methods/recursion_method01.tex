@@ -2,7 +2,7 @@
 
 Pelo método da substituição, mostremos que $T(n)$ é $O(n \cdot \log n)$ para o melhor caso, ou seja, que $T(n) \le c \cdot n \log_2 n + d$: \\
 \textbf{Demonstração.} \\
-Seja $T(n) = 2T(\frac{n}{2}) + n$. \\
+Seja $T(n)$ em seu melhor caso. \\
 Caso base: $n = 2, T(2) = 2$:
 \begin{align*} 
   T(n) \le c \cdot n \log_2 n + d & \implies T(2) \le c \cdot (2 \log_2 2) + d \\ 
@@ -33,7 +33,7 @@ Assuma que $d = ck - k$. Logo, temos:
 Portanto, vale que o melhor caso para o Quick Sort recursivo é $O(n \log_2 n)$. \\
 Então, mostremos que $T(n)$ é $O(n^2)$ para o pior caso, ou seja, que $T(n) \le c \cdot n^2$. \\
 \textbf{Demonstração.} \\
-Seja $T(n) = T(n - 1) + n$. \\
+Seja $T(n)$ em seu pior caso. \\
 Caso base: $n = 1, T(1) = 1$:
 \begin{align*}
   T(n) \le c \cdot n^2 & \implies T(1) \le c \cdot 1^2 \\

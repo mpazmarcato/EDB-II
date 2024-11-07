@@ -1,7 +1,7 @@
 \subsubsection{Método do Teorema Mestre}
 
-A relação de recorrência da quicksort recursiva em seu melhor caso é dada por \( T(n) = 2T(n/2) + n \). Utilizando o método mestre, temos:
+Utilizando o método mestre para a análise de $T(n)$ em seu melhor caso, temos:
 
 Tome \( a = 2 \), \( b = 2 \), \( k = 1 \). Como \( a = b^k \Leftrightarrow 2 = 2^1 \), então \( T(n) \) é \( \Theta(n^k \log{n}) \Rightarrow \Theta(n \log{n}) \).
 
-O método mestre não é aplicável para o seu pior caso, pois a relação é \( T(n) = T(n-1) + n \).
+O método mestre não é aplicável para o seu pior caso, pois a relação não atende aos requisitos para esse método.
