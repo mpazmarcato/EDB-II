@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <random>
 #include <chrono>
+#include "../common/utils.h"
 
 int buscaBinaria(const std::vector<int>& vec, int element) {
     int left = 0;
@@ -40,17 +41,6 @@ int bBinRec(const std::vector<int>& vec, int left, int right, int element) {
     else {
         return bBinRec(vec, middle + 1, right, element);
     }
-}
-
-std::vector<int> generateRandomAges(int size) {
-    std::vector<int> ages(size);
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dist(1, 100);
-    for (int i = 0; i < size; ++i) {
-        ages[i] = dist(gen);
-    }
-    return ages;
 }
 
 void search(int size) {

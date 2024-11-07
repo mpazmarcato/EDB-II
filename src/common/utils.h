@@ -64,7 +64,18 @@ void readArrayFromFile(const std::string& fileName, int array[], int size) {
 }
 
 void swap(int array[], int index1, int index2) { 
-  int aux = array[index2];
-  array[index2] = array[index1];
-  array[index1] = aux;
+    int aux = array[index2];
+    array[index2] = array[index1];
+    array[index1] = aux;
+}
+
+std::vector<int> generateRandomAges(int size) {
+    std::vector<int> ages(size);
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(1, 100);
+    for (int i = 0; i < size; ++i) {
+        ages[i] = dis(gen);
+    }
+    return ages;
 }
