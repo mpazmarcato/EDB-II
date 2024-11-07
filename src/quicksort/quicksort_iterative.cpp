@@ -4,41 +4,9 @@
 #include "../common/utils.h"
 #include <algorithm>
 
-using namespace std;
-
-int partition(vector<int> &arr, int low, int high)
+void quickSortIterative(std::vector<int> &array, int left, int right)
 {
-    int middle = low + (high - low) / 2;
-    int pivo = arr[middle];
-
-    int start = low;
-    int end = high;
-
-    while (start <= end)
-    {
-        while (arr[start] < pivo)
-        {
-            start++;
-        }
-
-        while (arr[end] > pivo)
-        {
-            end--;
-        }
-
-        if (start <= end)
-        {
-            swap(arr[start], arr[end]);
-            start++;
-            end--;
-        }
-    }
-    return start;
-}
-
-void quickSortIterative(vector<int> &array, int left, int right)
-{
-    stack<pair<int, int>> s;
+    std::stack<std::pair<int, int>> s;
 
     s.push({left, right});
 
@@ -67,11 +35,13 @@ void quickSortIterative(vector<int> &array, int left, int right)
 
 int main()
 {
-    vector<int> data = {8, 7, 2, 1, 0, 9, 6};
+    std::vector<int> data = generateRandomAges(10);
+    std::cout << "Given vector is \n";
     printVector(data);
 
     quickSortIterative(data, 0, data.size() - 1);
 
+    std::cout << "Sorted vector is \n";
     printVector(data);
 
     return 0;

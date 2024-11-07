@@ -1,8 +1,7 @@
 #include "../common/utils.h"
+#include <vector>
 
-using namespace std;
-
-void bubbleSortRecursive(int array[], int n)
+void bubbleSortRecursive(std::vector<int>& array, int n)
 {
     if (n == 1)
         return;
@@ -14,13 +13,14 @@ void bubbleSortRecursive(int array[], int n)
 
 int main()
 {
-    int array[] = {16, 2, 25, 11, 33, 4, 70};
-    int n = sizeof(array) / sizeof(array[0]);
+    std::vector<int> array = generateRandomAges(10);
 
-    printArray(array, n);
+    std::cout << "Given vector is \n";
+    printVector(array);
     
-    bubbleSortRecursive(array, n);
+    bubbleSortRecursive(array, array.size());
 
-    printArray(array, n);
+    std::cout << "Sorted vector is \n";
+    printVector(array);
     return 0;
 }

@@ -1,8 +1,7 @@
 #include "../common/utils.h"
+#include <vector>
 
-const int ARRAY_SIZE = 10;
-
-void bubbleSortIterative(int array[], int size) {
+void bubbleSortIterative(std::vector<int>& array, int size) {
   bool hasConflict;
   do {
     hasConflict = false;
@@ -16,13 +15,14 @@ void bubbleSortIterative(int array[], int size) {
 }
 
 int main() { 
-  int array[ARRAY_SIZE] = { 2, 10, 54, 31, 5, 3, 4, 99, 10, 111 };
+    std::vector<int> array = generateRandomAges(10);
 
-  printArray(array, ARRAY_SIZE);
+    std::cout << "Given vector is \n";
+    printVector(array);
+    
+    bubbleSortIterative(array, array.size());
 
-  std::cout << "Sorting now... \n";
-  bubbleSortIterative(array, ARRAY_SIZE);
-
-  std::cout << "Array is now sorted... \n";
-  printArray(array, ARRAY_SIZE);
+    std::cout << "Sorted vector is \n";
+    printVector(array);
+    return 0;
 }

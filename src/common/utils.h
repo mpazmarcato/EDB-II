@@ -2,15 +2,52 @@
 #include <vector>
 #include <fstream>
 #include <chrono>
+#include <random>
 
 const int ARRAY_SIZE_1000 = 1000;
 const int ARRAY_SIZE_10000 = 10000;
 const int ARRAY_SIZE_100000 = 100000;
 
+void swap(std::vector<int>& array, int index1, int index2) { 
+    int aux = array[index2];
+    array[index2] = array[index1];
+    array[index1] = aux;
+}
+
 void printVector(std::vector<int>& arr) {
     for (int i = 0; i < arr.size(); i++)
         std::cout << arr[i] << " ";
     std::cout << std::endl;
+}
+
+int partition(std::vector<int> &arr, int low, int high)
+{
+    int middle = low + (high - low) / 2;
+    int pivo = arr[middle];
+
+    int start = low;
+    int end = high;
+
+    while (start <= end)
+    {
+        while (arr[start] < pivo)
+        {
+            start++;
+        }
+
+        while (arr[end] > pivo)
+        {
+            end--;
+        }
+
+        if (start <= end)
+        {
+            std::swap(arr[start], arr[end]);
+            start++;
+            end--;
+        }
+    }
+    return start;
 }
 
 void merge(std::vector<int>& arr, int left, int mid, int right) {
@@ -54,12 +91,6 @@ void readArrayFromFile(const std::string& fileName, int array[], int size) {
     }
 
     file.close();
-}
-
-void swap(int array[], int index1, int index2) { 
-    int aux = array[index2];
-    array[index2] = array[index1];
-    array[index1] = aux;
 }
 
 std::vector<int> generateRandomAges(int size) {

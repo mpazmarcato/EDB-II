@@ -21,7 +21,7 @@ void mergeSortIterative(std::vector<int>& arr) {
 }
 
 int main() {
-    std::vector<int> arr = { 12, 11, 13, 5, 6, 7 };
+    std::vector<int> arr = generateRandomAges(10);
     int n = arr.size();
 
     std::cout << "Given vector is \n";
