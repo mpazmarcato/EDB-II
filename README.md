@@ -72,3 +72,13 @@ e executá-lo com:
 * Códigos `buscaBinaria`, `bBinRec` e análise: Andriel 
 * Execução de todos os algoritmos de ordenação: Paz
 * Análise dos resultados dos algoritmos de ordenação: Victor & Cauã
+
+## Ambiente utilizado durante execução
+- Computador: Dell Latitude 3420 
+- Processador: Intel I7 11th Geração
+- RAM: 16GB
+- Editor de Texto: Visual Studio Code
+- IDE: nenhuma
+- Sistema Operacional: Ubuntu 24 LTS
+- Softwares: LaTeX e C++ 
+- Compiladores: GCC 13 e PdfTex 3.14
